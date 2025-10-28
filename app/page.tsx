@@ -77,7 +77,16 @@ export default function Home() {
         {/* Footer */}
         <footer className="flex flex-col gap-3 text-sm text-zinc-500 dark:text-zinc-400 mt-12 text-center sm:text-left">
           <p>
-            Built with ❤️ using{" "}
+            Built with ❤️ by{" "}
+            <a
+              href="https://github.com/FireFlyDeveloper"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-zinc-700 dark:hover:text-zinc-200"
+            >
+              FireFlyDeveloper
+            </a>{" "}
+            using{" "}
             <a
               href="https://nextjs.org/"
               target="_blank"
