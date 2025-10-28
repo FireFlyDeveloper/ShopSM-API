@@ -13,8 +13,13 @@ export async function GET(request: Request) {
     return value >= min && value <= max;
   });
 
-  return NextResponse.json({
+  const res = NextResponse.json({
     count: filtered.length,
     items: filtered,
   });
+
+  res.headers.set("Access-Control-Allow-Origin", "*");
+  res.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.headers.set("Access-Control-Allow-Headers", "Content-Type");
+  return res;
 }

@@ -15,10 +15,15 @@ export async function GET(request: Request) {
 
   const items = data.slice(start, end);
 
-  return NextResponse.json({
+  const res =  NextResponse.json({
     page,
     totalPages,
     totalItems: total,
     items,
   });
+
+  res.headers.set("Access-Control-Allow-Origin", "*");
+  res.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.headers.set("Access-Control-Allow-Headers", "Content-Type");
+  return res;
 }

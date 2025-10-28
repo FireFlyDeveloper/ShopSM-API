@@ -15,5 +15,10 @@ export async function GET(request: Request) {
     .filter((item: any) => item.name.toLowerCase().includes(q))
     .slice(0, 10) // limit suggestions
 
-  return NextResponse.json(suggestions);
+  const res = NextResponse.json(suggestions);
+
+  res.headers.set("Access-Control-Allow-Origin", "*");
+  res.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.headers.set("Access-Control-Allow-Headers", "Content-Type");
+  return res;
 }
