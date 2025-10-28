@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ShopSM API
+
+## Overview
+
+ShopSM API is a Next.js-based application that serves product data scraped from ShopSM.com for development and testing purposes. The application provides a clean, responsive interface with dark mode support and several API endpoints for accessing product data.
+
+## Features
+
+- 🛍️ Product data from ShopSM.com
+- 🔍 Real-time search functionality
+- 📄 Paginated results
+- 💰 Price range filtering
+- 🌙 Dark mode support
+- 📱 Responsive design
+
+## Tech Stack
+
+- **Framework**: Next.js 14+ with App Router
+- **Styling**: Tailwind CSS
+- **Font**: System sans-serif font stack
+- **Deployment**: Vercel (optimized)
+
+## API Endpoints
+
+### 1. Paginated Products
+```http
+GET /api/get?page=1
+```
+Returns paginated product results.
+
+### 2. Search Suggestions
+```http
+GET /api/searches?q=coffee
+```
+Provides real-time search suggestions based on query.
+
+### 3. Price Filter
+```http
+GET /api/filter?min=100&max=500
+```
+Filters products by price range.
+
+## Project Structure
+
+```
+shopsm-api/
+├── app/
+│   ├── api/
+│   │   ├── get/
+│   │   ├── searches/
+│   │   └── filter/
+│   ├── page.tsx
+│   └── layout.tsx
+├── public/
+│   └── next.svg
+└── package.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+ 
+- npm, yarn, or pnpm
 
+### Installation
+
+1. Clone the repository:
+```bash
+git clone 
+cd shopsm-api
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The application is optimized for deployment on Vercel:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your code to a Git repository
+2. Connect your repository to Vercel
+3. Deploy automatically
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment Setup
 
-## Deploy on Vercel
+No environment variables are required for basic functionality. The application uses local data scraping from ShopSM.com.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is built for educational and development purposes. Please ensure compliance with ShopSM.com's terms of service when using scraped data.
+
+## Support
+
+For support and questions:
+- Check the API documentation above
+- Ensure you're using the correct endpoint formats
+- Verify your query parameters are properly formatted
+
+---
+
+Built with ❤️ using Next.js and App Router.
