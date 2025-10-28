@@ -66,7 +66,7 @@ shopsm-api/
 
 1. Clone the repository:
 ```bash
-git clone 
+git clone https://github.com/FireFlyDeveloper/ShopSM-API.git
 cd shopsm-api
 ```
 
